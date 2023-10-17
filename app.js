@@ -1,12 +1,12 @@
 let characters = []
 
 document.addEventListener("DOMContentLoaded", function(){
-   getCharacters()
+   getChars()
 })
 
 
 
-function getCharacters(){
+function getChars(){
     fetch("http://localhost:3000/characters", {
     method: "GET",
     header:{
@@ -15,12 +15,12 @@ function getCharacters(){
 }).then((data)=> data.json())
 .then((response)=> {
     characters= [...response]
-    displayCharacters(response)
+    displayChars(response)
       
 })
 }
 
-function displayCharacters(character){
+function displayChars(character){
     const characterbar = document.querySelector("#character-bar")
     for (character of characters){
         const span = document.createElement("span");
@@ -36,12 +36,12 @@ function displayCharacters(character){
     }
 }
 
-function displayCharacterDetails(character){
+function displayCharDetails(character){
     const image = document.querySelector("#image")
     image.src = character.image
 }
 
-function getCharacterById(characters, id){
+function getCharById(characters, id){
     return characters.find((charcater)=>{
         return charcater.id === id 
     })
