@@ -10,7 +10,7 @@
 <body>
     <div id="filterContainer">
         <div id="filterText">
-          <span style="float: left; position: absolute;">Filter: </span>
+          <span style="float: left; position: absolute;"></span>
         </div>
   
         <div id="filterBtnContainer" class="scrolling-wrapper-filter-btns"></div>
@@ -25,7 +25,9 @@
         <br/>
         <div id = "detailed-info">
             <p id ="name">Character's Name</p>
-            <img id="image" src="" alt="Character's Name"/>
+            <div id="image-container">
+            <img id="image" src="images/" alt="Character's Name"/>
+            </div>
             <h4>Total Votes: <span id ="vote-count">Character's Votes</span></h4>
             <form id="votes-form">
                 <input type = "number" placeholder="Enter Vote(+1 if Empty)" id = "votes" name = "votes" />
