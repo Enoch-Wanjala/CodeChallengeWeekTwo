@@ -28,14 +28,18 @@
             <div id="image-container">
             <img id="image" src="images/" alt="Character's Name"/>
             </div>
-            <h4>Total Votes: <span id ="vote-count">Character's Votes</span></h4>
+            <h4 id ="vote-countH4">
+                Total Votes: 
+                <span id ="vote-count" type="number">Character's Votes</span>
+            </h4>
             <form id="votes-form">
                 <input type = "number" placeholder="Enter Vote(+1 if Empty)" id = "votes" name = "votes" />
                 <input type = "submit" value= "Add votes"/> 
             </form>
         </div>
+        
         <button id = "reset-btn">Reset Votes</button>
-
+        
     </div>
     <script src="app.js"></script>
 </body>
