@@ -1,13 +1,13 @@
 
 let characters = []
 document.addEventListener("DOMContentLoaded",function(){
-    getCharacters()
+    getChars()
 })
 
 
 
 //here we are fetching data from the json database
-function getCharacters(){
+function getChars(){
 fetch("http://localhost:3000/characters", {
     method: "GET",
     header:{
@@ -16,7 +16,7 @@ fetch("http://localhost:3000/characters", {
 }).then((data)=> data.json())
 .then((response)=> {
     characters= [...response]
-    displayCharacters(response)
+    displayChars(response)
       
 }) 
 }
@@ -25,7 +25,7 @@ fetch("http://localhost:3000/characters", {
 
 
 //this function is for displaying data
-function displayCharacters(characters){
+function displayChars(characters){
     const characterbar = document.querySelector("#character-bar")
     for (character of characters){
         const span = document.createElement("span");
@@ -33,7 +33,7 @@ function displayCharacters(characters){
         span.setAttribute("id", character.id)
 
         span.addEventListener("click", (event)=> {
-            displayCharacterDetails(getCharacterById(characters, parseInt (event.target.id)))
+            displayCharDetails(getCharById(characters, parseInt (event.target.id)))
         });
 
         characterbar.appendChild(span);
@@ -41,12 +41,12 @@ function displayCharacters(characters){
 }
 
 
-function displayCharacterDetails(character){
+function displayCharDetails(character){
     const image = document.querySelector("#image")
     image.src = character.image
 }
 
-function getCharacterById(characters, id){
+function getCharById(characters, id){
     return characters.find((charcater)=>{
         return charcater.id === id 
     })
